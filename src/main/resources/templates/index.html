@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Table</title>
+    <link th:href="@{/css/main.css}" rel="stylesheet">
+	<script type="text/javascript" th:src="@{/js/actions.js}"></script>
+</head>
+<body>
+    <h1 style="text-align: center;color:rgb(97, 3, 3)">Employee Info</h1>
+	<div>
+    <center>
+        <table>
+            <tr>
+                <th>Id</th>
+				<th>Name</th>
+                <th>Email Address</th>
+                <th>Place</th>
+				<th>Phone No</th>
+				<th>Update</th>
+				
+            </tr>
+            <tr th:each="employee:${employees}">
+                <td th:text="${employee.id}"></td>
+				<td th:text="${employee.name}"></td>
+                <td th:text="${employee.email}"></td>
+                <td th:text="${employee.place}"></td>
+				<td th:text="${employee.phone_no}"></td>
+				<td>
+				 <a th:href="@{/update/{id}(id=${employee.id})}">Edit</a> |
+				 <a th:href="@{/delete/{id}(id=${employee.id})}" onclick="return confirmDelete()">Delete</a>
+				</td>
+				
+            </tr>
+    
+        </table>
+		<div>
+			<button><a th:href="@{/add}" type="button">Add NewEmployee</a></button>
+		</div>
+    </center>
+	<div>
+    
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link th:href="@{/css/main.css}" rel="stylesheet">
+	<script type="text/javascript" th:src="@{/js/actions.js}"></script>
+</head>
+
+<body>
+   
+    <h1 style="color:rgb(97, 3, 3)">Employee Registeration</h1>
+    <form th:action="@{/add/save}" th:object="${employee}" method="post">
+	   
+        <div>
+            <label>Enter your Name</label>
+            <input type="text" th:field="*{name}" name="name" placeholder="Name"> 
+        </div>
+		<div >
+		     <label >Enter your Email</label>
+		     <input type="email" th:field="*{email}"name="email" placeholder="Email Address"> 
+		</div>
+        <div>
+            <label>Enter your place</label>
+            <input type="text" th:field="*{place}" name="place" placeholder="Place" > 
+        </div>
+		<div >
+		    <label >Phone no</label>
+		    <input type="text" th:field="*{phone_no}"name="phone_no" placeholder="Phone No"> 
+		</div>
+        <div>
+			<button>Create</button>
+		<div>
+	    
+    </form>
+
+</body>
+</html>
